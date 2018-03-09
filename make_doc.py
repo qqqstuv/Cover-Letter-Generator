@@ -10,6 +10,10 @@ address = "Victoria BC"
 phone = "250-884-6325"
 mail = "dukeng@uvic.ca"
 
+def format_size_and_font(paraObj):
+    paraObj.font.size = 
+
+
 document = Document()
 
 document.add_heading(name, 2)
