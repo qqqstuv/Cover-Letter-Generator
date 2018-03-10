@@ -76,8 +76,10 @@ def askForChoices(choice_obj, promptString=None):
 def sanitize_name(names):
     returnName = ""
     for name in names:
-        name = name.replace("(", "").replace(")", "") \
-        .replace(" ", "").replace("\/", "").replace("\\", "").replace(".","")
+        name = name \
+        .replace("(", "").replace(")", "") \
+        .replace(" ", "").replace("\/", "").replace("\\", "") \
+        .replace(".","").replace(",", "")
         returnName += name + "_"
     returnName += ".docx"
     return returnName

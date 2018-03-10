@@ -118,9 +118,10 @@ name_obj.add_run(name)
 save_file_name = helper.sanitize_name([company_name, position, today.strftime('%d, %b %Y') ])
 
 print(save_file_name)
-# document.save(save_file_name)
-# document.save("news.docx")
+document.save(save_file_name)
 
 os.system("abiword --to=pdf " + save_file_name)
+os.system("rm -rf " + save_file_name)
 
-
+with open("info.json", 'w') as outfile:
+    json.dump(data, outfile, indent=4)
