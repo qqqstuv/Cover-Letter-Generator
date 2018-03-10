@@ -10,8 +10,9 @@ import helper
 # dynamic info
 
 
+info_json = "sample.json"
 
-data = json.load(open('info.json'))
+data = json.load(open(info_json))
 
 name = data["name"]
 address = data["address"]
@@ -123,5 +124,5 @@ document.save(save_file_name)
 os.system("abiword --to=pdf " + save_file_name)
 os.system("rm -rf " + save_file_name)
 
-with open("info.json", 'w') as outfile:
+with open(info_json, 'w') as outfile:
     json.dump(data, outfile, indent=4)
