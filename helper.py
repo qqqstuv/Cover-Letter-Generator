@@ -17,8 +17,14 @@ def format_fill_in_info(format_obj, data):
     replaceList = re.findall("\{.*?\}", format_obj)
     for replace in replaceList:
         replaceTo = replace.strip("{").strip("}")
-        format_obj = re.sub(replace, data[replaceTo], format_obj)
+        format_obj = re.sub(replace, str(data[replaceTo]), format_obj)
     return format_obj
+
+
+def askYesNo(promptString=None):
+    print(promptString)
+    answer = input()
+    return False if not answer.isdigit() else int(answer)
 
 def askInput(promptString=None):
     print(promptString)

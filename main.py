@@ -98,6 +98,10 @@ activities_obj.add_run(activiy_para)
 final_obj = document.add_paragraph()
 final_obj = helper.format_alignment(final_obj)
 final_obj.add_run(helper.format_fill_in_info(closing, data))
+availability = helper.askYesNo("Availability: press 4,8, 12 or 16. n for no")
+if availability:
+    data["availability_time"] = availability
+    final_obj.add_run(helper.format_fill_in_info(data["available"], data))    
 
 #CLOSING
 closing_obj= document.add_paragraph()
@@ -113,9 +117,8 @@ name_obj.add_run(name)
 
 save_file_name = helper.sanitize_name([company_name, position, today.strftime('%d, %b %Y') ])
 
-
 print(save_file_name)
-document.save(save_file_name)
+# document.save(save_file_name)
 # document.save("news.docx")
 
 os.system("abiword --to=pdf " + save_file_name)

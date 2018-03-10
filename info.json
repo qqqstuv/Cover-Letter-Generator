@@ -5,13 +5,16 @@
     "email" : "dukeng@uvic.ca",
     "website":"https://dukeng.github.io/",
     "github":"https://github.com/dukeng/",
+    "availability_time" : "4",
 
     "company_name": "Relic Entertainment",
     "position": "Associate Programmer (Server) Co-op",
     "open_para":
     {
         "typical": "I am writing to apply to the {position} position with {company_name}. I am a third year a Computer Science student at the University of Victoria and I have very strong interests in software development; I can contribute to the position with my self-driven software knowledge as evidenced by my coop experience and my pursuit of various extracurricular activities. ",
-        "game": "I am writing to apply to the {position} position with {company_name}. I am a third year Computer Science student at the University of Victoria and I have a passion in game development as evidenced by the games I have created and published as well as my coop experiences. I am confident that I can be a valuable member of your {company_name} team."
+        "game": "I am writing to apply to the {position} position with {company_name}. I am a third year Computer Science student at the University of Victoria and I have a passion in game development as evidenced by the games I have created and published as well as my coop experiences. I am confident that I can be a valuable member of your {company_name} team.",
+        "web": "I am writing to apply to the {position} position with {company_name}. I am a third year a Computer Science student at the University of Victoria and I have very strong interests in web development; I can contribute to the position with my self-driven software knowledge as evidenced by my webdev coop experience and various webapp projects that I have built and published. "
+
     },
 
     "first_coop":"In the summer of 2017, I worked as a software development engineer for Abebooks, an  Amazon Company for four months. I used Python to prototype the integration of a potential online payment service into the current systems to determine the feasibility for future business between the two companies. I tested the payment provider’s API, participated in evaluating risks and security loopholes and negotiating for customized features. Besides, I developed ecommerce features using Groovy with Spring MVC, JUnit, AWS: S3, SQS and databases such as PostgreSQL and Oracle. ",
@@ -23,5 +26,6 @@
         "hackUvic2017" : "I created a web application in 24 hours that allows user to post and view places of free food using GoogleMap API, Python and PostgreSQL that later made me win the Sponsor Prize at the UVic Hacks 2017",
         "competitiveProgramming": "I am the vice president of the UVic Competitive Programming Club and have participated in competitions such as the ACM International Collegiate Programming Contest"
     },
-    "closing" : "I would like to thank you very much for considering my application, and I would greatly look forward to an opportunity to interview for the position offered by {company_name}. I can be reached by phone at {phone} or by email at {email}. For more information about me, please visit: {website}" 
+    "closing" : "I would like to thank you very much for considering my application, and I would greatly look forward to an opportunity to interview for the position offered by {company_name}. I can be reached by phone at {phone} or by email at {email}. For more information about me, please visit: {website}.",
+    "available": " I am available for up to {availability_time} months coop."
 }
