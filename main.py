@@ -7,12 +7,12 @@ import json, re, os
 from pprint import pprint
 import helper
 
-# dynamic info
+############## CONFIG
+# detail file goes here
+info = "sample.json"
+save_dir = "Documents/"
 
-
-info_json = "sample.json"
-
-data = json.load(open(info_json))
+data = json.load(open(info))
 
 name = data["name"]
 address = data["address"]
@@ -76,17 +76,17 @@ openpara_obj = helper.format_alignment(openpara_obj)
 open_para_choice = helper.askForChoice(open_para, "Choose open paragraph")
 openpara_obj.add_run(helper.format_fill_in_info(open_para_choice, data))
 
-#First coop
-first_coop_obj = document.add_paragraph()
-first_coop_obj = helper.format_alignment(first_coop_obj)
-first_coop_obj.add_run(first_coop)
-
 #Second coop
 second_coop_obj = document.add_paragraph()
 second_coop_obj.add_run(second_coop)
 second_coop_obj = helper.format_alignment(second_coop_obj)
 
-#ACTIVITIES
+#First coop
+first_coop_obj = document.add_paragraph()
+first_coop_obj = helper.format_alignment(first_coop_obj)
+first_coop_obj.add_run(first_coop)
+
+##############ACTIVITIES
 activities_obj = document.add_paragraph()
 activities_obj = helper.format_alignment(activities_obj)
 activities = helper.askForChoices(activities, "Choose extracurricular activities")
@@ -95,7 +95,7 @@ activiy_para = activity_string.format(*activities)
 
 activities_obj.add_run(activiy_para)
 
-#FINAL PARAGRAPH
+##############FINAL PARAGRAPH
 final_obj = document.add_paragraph()
 final_obj = helper.format_alignment(final_obj)
 final_obj.add_run(helper.format_fill_in_info(closing, data))
@@ -104,12 +104,12 @@ if availability:
     data["availability_time"] = availability
     final_obj.add_run(helper.format_fill_in_info(data["available"], data))    
 
-#CLOSING
+##############CLOSING
 closing_obj= document.add_paragraph()
 closing_obj = helper.format_alignment(closing_obj, 0)
 closing_obj.add_run("Sincerely,")
 
-#SIGNATURE
+##############SIGNATURE
 name_obj= document.add_paragraph()
 name_obj = helper.format_alignment(name_obj, 0)
 name_obj.add_run(name)
@@ -118,11 +118,14 @@ name_obj.add_run(name)
 
 save_file_name = helper.sanitize_name([company_name, position, today.strftime('%d, %b %Y') ])
 
-print(save_file_name)
-document.save(save_file_name)
+save_to_path = save_dir + save_file_name
 
-os.system("abiword --to=pdf " + save_file_name)
-os.system("rm -rf " + save_file_name)
+print("Save to:", save_to_path)
 
-with open(info_json, 'w') as outfile:
+document.save(save_to_path)
+
+os.system("abiword --to=pdf " + save_to_path) # Convert to pdf using abiword
+os.system("rm -rf " + save_to_path) # Delete the doc file
+
+with open(info, 'w') as outfile:
     json.dump(data, outfile, indent=4)

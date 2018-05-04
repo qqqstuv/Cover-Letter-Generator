@@ -1,5 +1,5 @@
 all:
-	python main.py
+	python3 main.py
 convert:
 	abiword --to=pdf news.docx
 view:

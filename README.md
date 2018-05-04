@@ -10,9 +10,12 @@ Cover Letter Generator solves all the problems above. It gets rid of simple mist
 
 Clone the project.
 
+Need to have python3 and pip3 to install requirements
+
 Run:
 ```
 pip install requirements.txt
+sudo apt-get install abiword
 ```
 
 ## How to use

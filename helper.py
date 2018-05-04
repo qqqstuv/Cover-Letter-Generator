@@ -1,5 +1,3 @@
-
-
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.shared import Inches, Cm
 import re
@@ -26,6 +24,7 @@ def askYesNo(promptString=None):
     answer = input()
     return False if not answer.isdigit() else int(answer)
 
+#Ask for a string
 def askInput(promptString=None):
     print(promptString)
     return input()
