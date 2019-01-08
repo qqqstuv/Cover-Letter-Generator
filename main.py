@@ -29,6 +29,7 @@ position=data["position"]
 open_para=data["open_para"]
 first_coop=data["first_coop"]
 second_coop=data["second_coop"]
+third_coop=data["third_coop"]
 activities=data["activities"]
 closing=data["closing"]
 
@@ -75,6 +76,11 @@ openpara_obj = document.add_paragraph()
 openpara_obj = helper.format_alignment(openpara_obj)
 open_para_choice = helper.askForChoice(open_para, "Choose open paragraph")
 openpara_obj.add_run(helper.format_fill_in_info(open_para_choice, data))
+
+#Third coop
+third_coop_obj = document.add_paragraph()
+third_coop_obj = helper.format_alignment(third_coop_obj)
+third_coop_obj.add_run(third_coop)
 
 #Second coop
 second_coop_obj = document.add_paragraph()
