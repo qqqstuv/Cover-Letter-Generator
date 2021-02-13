@@ -31,7 +31,7 @@ mail = os.getenv('MAIL')
 website = os.getenv('WEBSITE')
 github = os.getenv('GITHUB')
 
-# appending the data to the json object
+# updating the data to the json object from the .env file
 data.update({
     'name':name,
     'address':address,
@@ -155,6 +155,16 @@ document.save(save_to_path)
 
 # os.system("abiword --to=pdf " + save_to_path) # Convert to pdf using abiword
 # os.system("rm -rf " + save_to_path) # Delete the doc file
+
+# clearing all the info from the .env 
+data.update({
+    'name':'',
+    'address':'',
+    'phone':'',
+    'mail':'',
+    'website':'',
+    'github':''
+}) 
 
 with open(info, 'w') as outfile:
     json.dump(data, outfile, indent=4)

@@ -23,6 +23,8 @@
 *.docx
 *.pdf
 info.json
+# my own cover letter
+personalCoverLetter.json
 # from:
 # https://github.com/github/gitignore/blob/master/Python.gitignore
 

@@ -6,23 +6,23 @@
     },
     "available": " I am available for up to {availability_time} months coop.",
     "third_coop": "In my most recent coop, I worked as a software engineer intern for the Trace team of Google Cloud Platform at Google. I made a search bar with customizable search fields that helps with searching and boosted up the search traffic by 20 percent. Additionally, I developed an end-to-end feature to suggest the most common data for each user and used to autocomplete text search. This project enabled me to use various programming languages to write software that could scale at massive levels and software architecture and data processing pipelines. ",
-    "github": "https://github.com/Vanderscycle",
+    "github": "",
     "closing": "I would like to thank you very much for considering my application, and I would greatly look forward to an opportunity to interview for the position offered by {company_name}. I can be reached by phone at {phone} or by email at {email}. For more information about me, please visit: {website}.",
-    "website": "https://hub.docker.com/u/vandercycle",
+    "website": "",
     "email": "",
     "second_coop": "In the summer of 2017, I worked as a software development engineer for Abebooks, an  Amazon Company for four months. I used Python to prototype the integration of a potential online payment service into the current systems to determine the feasibility for future business between the two companies. I tested the payment provider\u2019s API, participated in evaluating risks and security loopholes and negotiating for customized features. Besides, I developed ecommerce features using Groovy with Spring MVC, JUnit, AWS: S3, SQS and databases such as PostgreSQL and Oracle. ",
-    "name": "Henri Vandersleyen",
+    "name": "",
     "activities": {
         "coursesearchoptimizer": "I used Chrome Extension API and JavaScript to create an extension that helps UVic students register for courses easily",
         "battlesnake2018": "I competed in the 2018 Battlesnake AI competition to build a C++ snake to fight other snakes and won the first prize of $1000",
         "happylittlevillage": "I created an Android game application which is published on GooglePlay and has achieved 500 downloads",
         "hackUvic2017": "I created a web application in 24 hours that allows user to post and view places of free food using GoogleMap API, Python and PostgreSQL that later made me win the Sponsor Prize at the UVic Hacks 2017"
     },
-    "company_name": "test",
+    "company_name": "adadad",
     "first_coop": "My other work experience includes a four month coop term in September 2016 as a full stack web developer for RealtyServer System Inc. This company build online softwares serving multiple listing services for real estate business. My duties included implementing new backend features and functionalities for various real estate websites. I learnt technology such as Java Servlet, Velocity template engine and Javascript, jQuery for frontend styling and RESTful API.",
-    "phone": "250-886-5099",
-    "position": "test",
-    "address": "Victoria BC",
+    "phone": "",
+    "position": "adad",
+    "address": "",
     "availability_time": 4,
-    "mail": "hvandersleyen@gmail.com"
+    "mail": ""
 }
