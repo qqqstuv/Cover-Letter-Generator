@@ -1,14 +1,14 @@
 
 
-
+from dotenv import load_dotenv
 from docx import Document
 from docx.shared import Inches
 # from docx.enum.text import WD_ALIGN_PARAGRAPH
-
-name = "Duc Nguyen"
-address = "Victoria BC"
-phone = "250-884-6325"
-mail = "dukeng@uvic.ca"
+load_dotenv()
+name =os.getenv('NAME')
+address = os.getenv('ADDRESS')
+phone = os.getenv('PHONE')
+mail = os.getenv('MAIL')
 
 def format_size_and_font(paraObj):
     paraObj.font.size = 

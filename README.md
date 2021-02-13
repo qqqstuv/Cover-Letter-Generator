@@ -17,7 +17,15 @@ Run:
 pip install requirements.txt
 sudo apt-get install abiword
 ```
-
+Inside the folder create a .env file and populate it with your personal information
+```
+NAME=Henri Vandersleyen
+ADDRESS=Somewhere BC
+PHONE=XXX-XXX-XXXXX
+MAIL=something@me.com
+WEBSITE=yourUrl
+GITHUB=yourUrl
+```
 ## How to use
 
 Run:

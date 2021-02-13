@@ -5,21 +5,44 @@ from docx.shared import Pt
 import datetime
 import json, re, os
 from pprint import pprint
+# custom made python script
 import helper
-
+# dotenv to handle the .env file
+from dotenv import load_dotenv
+# pathlib to handle the 
+from pathlib import Path
 ############## CONFIG
 # detail file goes here
 info = "sample.json"
-save_dir = "Documents/"
+save_dir = "coverLetters/"
 
+BASE_DIR = Path(__file__).resolve().parent
+savePath = os.path.join(BASE_DIR,save_dir)
+
+# loading the json file data
 data = json.load(open(info))
 
-name = data["name"]
-address = data["address"]
-phone = data["phone"]
-email = data["email"]
-website= data["website"]
-github= data["github"]
+# loading all the private information
+load_dotenv()
+name =os.getenv('NAME')
+address = os.getenv('ADDRESS')
+phone = os.getenv('PHONE')
+mail = os.getenv('MAIL')
+website = os.getenv('WEBSITE')
+github = os.getenv('GITHUB')
+
+# appending the data to the json object
+data.update({
+    'name':name,
+    'address':address,
+    'phone':phone,
+    'mail':mail,
+    'website':website,
+    'github':github
+}) 
+  
+# the result is a JSON string: 
+# pprint(json.dumps(data))  
 
 data["company_name"] = helper.askInput("Enter name of the company:")
 company_name=data["company_name"]
@@ -54,7 +77,7 @@ contact_info = document.add_paragraph()
 #Contact information
 address_obj = contact_info.add_run(address + " , ")
 phone_obj = contact_info.add_run(phone + " , ")
-mail_obj = contact_info.add_run(email)
+mail_obj = contact_info.add_run(mail)
 website_obj = contact_info.add_run("\n" + "Website:" + website)
 github_obj = contact_info.add_run("\n" + "Github:" + github)
 
@@ -124,14 +147,14 @@ name_obj.add_run(name)
 
 save_file_name = helper.sanitize_name([company_name, position, today.strftime('%d, %b %Y') ])
 
-save_to_path = save_dir + save_file_name
+save_to_path = savePath + save_file_name
 
 print("Save to:", save_to_path)
 
 document.save(save_to_path)
 
-os.system("abiword --to=pdf " + save_to_path) # Convert to pdf using abiword
-os.system("rm -rf " + save_to_path) # Delete the doc file
+# os.system("abiword --to=pdf " + save_to_path) # Convert to pdf using abiword
+# os.system("rm -rf " + save_to_path) # Delete the doc file
 
 with open(info, 'w') as outfile:
     json.dump(data, outfile, indent=4)
