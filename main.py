@@ -10,7 +10,7 @@ import helper
 ############## CONFIG
 # detail file goes here
 info = "sample.json"
-save_dir = "Documents/"
+save_dir = "./"
 
 data = json.load(open(info))
 
@@ -97,6 +97,7 @@ activities_obj = document.add_paragraph()
 activities_obj = helper.format_alignment(activities_obj)
 activities = helper.askForChoices(activities, "Choose extracurricular activities")
 activity_string = "Beside coop experience, {}. Additionally, {}. {}. Last but not least, {}."
+activities = {'a': '1', 'b': '2', 'c': '3', 'd': '4'}
 activiy_para = activity_string.format(*activities)
 
 activities_obj.add_run(activiy_para)
@@ -105,7 +106,7 @@ activities_obj.add_run(activiy_para)
 final_obj = document.add_paragraph()
 final_obj = helper.format_alignment(final_obj)
 final_obj.add_run(helper.format_fill_in_info(closing, data))
-availability = helper.askYesNo("Availability: options are (4,8,12 or 16) months. n for no")
+availability = helper.askYesNo("Availability: options are (4, 8, 12 or 16) months. n for no")
 if availability:
     data["availability_time"] = availability
     final_obj.add_run(helper.format_fill_in_info(data["available"], data))    
